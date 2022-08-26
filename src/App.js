@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Black from "./Black.css";
 
-function App() {
+const App = () => {
+
+let purple = '#ff00aa77';
+
+const [color,bgColor]=useState(purple);
+const [name,newName]=useState("click");
+
+
+const bg= () => {
+  let bgCol='#A52A2A';
+  bgColor(bgCol);
+  newName("oooch!!! ");
+
+};
+
+ const three=  () => {
+ bgColor(purple);
+newName("wowww!!!");
+ }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div style={{backgroundColor: color}} className="red">
+    <button onClick={bg} onDoubleClick={three}> {name} </button>
     </div>
-  );
+    </>
+    
+  )
 }
 
 export default App;
